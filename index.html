@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disqus Test Page</title>
+</head>
+<body>
+
+  <h1>Disqus Integration Test</h1>
+  <p>If comments load below, integration is working ✅</p>
+
+  <div id="disqus_thread"></div>
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = "test-page-1";
+    };
+
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://casualgamer.saas-dev.disqus.org/embed.js'; // 🔥 replace this
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>
