@@ -9,12 +9,12 @@
   <p>If comments load below, integration is working ✅</p>
   <div style="width:100vw;height:600px">
     
-  <div id="left-rail" style="width:20vw;height:600px;float:left"></div>
+  <div id="left" style="width:20vw;height:600px;float:left"></div>
   <div id="disqus_thread" style="width:60vw;height:600px;float:left">
     
     
   </div>
-  <div id="right-rail" style="width:20vw;height:600px;float:left"></div>
+  <div id="right" style="width:20vw;height:600px;float:left"></div>
   </div>
 <script>
     /**
@@ -38,8 +38,8 @@
 </body>
   <script>
     const adSlots = {
-        leftRail: 'left-rail',
-        rightRail: 'right-rail'
+        left: 'left',
+        right: 'right'
     };
     function loadTempestAds(params) {
         const script = document.createElement('script');
