@@ -7,8 +7,14 @@
 
   <h1>Disqus Integration Test</h1>
   <p>If comments load below, integration is working ✅</p>
-
-  <div id="disqus_thread"></div>
+  <div style="width:100vw;height:600px">
+  <div id="left-rail" style="width:20vw;height:600px"></div>
+  <div id="disqus_thread" style="width:60vw;height:600px">
+    
+    
+  </div>
+  <div id="right-rail" style="width:20vw;height:600px"></div>
+  </div>div>
 <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -29,4 +35,26 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </body>
+  <script>
+    const adSlots = {
+        leftRail: 'left-rail',
+        rightRail: 'right-rail'
+    };
+    function loadTempestAds(params) {
+        const script = document.createElement('script');
+        script.src = 'https://tempest.services.disqus.com/ads.js?' + new URLSearchParams(params).toString();
+        script.async = true;
+        document.head.appendChild(script);
+    }
+    loadTempestAds({
+        positions: Object.keys(adSlots).join(','),
+        shortname: 'casualgamer',
+        sourceUrl: window.location.href
+    });
+    const dqads = window.dqads = window.dqads || {};
+    dqads.que = dqads.que || [];
+    dqads.que.push(function() {
+        Object.entries(adSlots).forEach(([position, divId]) => dqads.startAds(divId, position));
+    });
+</script>
 </html>
